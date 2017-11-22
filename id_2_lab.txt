@@ -1,0 +1,69 @@
+G=({S, A, B, C, D, E}, {a, b, c, d, e, $, _, #}, P, S), где P:
+1) S→aA | bB | cC; 
+2) A→dD; 
+3) B→#D | $E; 
+4) D→dD | dB | _;
+5) C→cE; 
+6) E→eE | eB | _.
+
+G=({S, A, B, C, D, E, N}, {a, b, c, d, e, $, _, #}, P, S), где P:
+1) S→aA | bB | cC; 
+2) A→dD; 
+3) B→#D | $E; 
+4) D→dD | dB | _N | _;
+5) C→cE; 
+6) E→eE | eB | _N | _.
+
+H = {S}
+Q = {SABCDEN}
+Z = {N}
+
+   S   A  B  C  D  E 
+a | A|  |  |  |  |  |
+b | B|  |  |  |  |  |
+c | C|  |  | E|  |  |
+d |  | D|  |  |BD|  |
+e |  |  |  |  |  |BE|
+$ |  |  | E|  |  |  |
+_ |  |  |  |  |N | N|
+# |  |  | D|  |  |  |
+
+   S   A  B  C  D  E 
+a | A|  |  |  |  |  |
+b | B|  |  |  |  |  |
+c | C|  |  | E|  |  |
+d |  | D|  |  |BD|  |
+e |  |  |  |  |  |BE|
+$ |  |  | E|  |  |  |
+_ |  |  |  |  |N | N|
+# |  |  | D|  |  |  |
+
+   S  A  B  C  D  E   BD BE   N
+a | A|  |  |  |  |  |   |   |  |
+b | B|  |  |  |  |  |   |   |  |
+c | C|  |  | E|  |  |   |   |  |
+d |  | D|  |  |BD|  |BD |   |  |
+e |  |  |  |  |  |BE|   |BE |  |
+$ |  |  | E|  |  |  | E |E  |  |
+_ |  |  |  |  |N | N| N |N  |  |
+# |  |  | D|  |  |  | D |D  |  |
+
+BD = X
+BE = Y
+
+H = {S}
+Q = {SABCDENXY}
+Z = {N}
+
+   S  A  B  C  D  E   X  Y    N
+a | A|  |  |  |  |  |   |   |  |
+b | B|  |  |  |  |  |   |   |  |
+c | C|  |  | E|  |  |   |   |  |
+d |  | D|  |  |X |  |X  |   |  |
+e |  |  |  |  |  |Y |   |Y  |  |
+$ |  |  | E|  |  |  | E |E  |  |
+_ |  |  |  |  |N | N| N |N  |  |
+# |  |  | D|  |  |  | D |D  |  |
+
+
+

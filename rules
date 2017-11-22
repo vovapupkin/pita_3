@@ -1,0 +1,6 @@
+S->aA|bB|cC
+A->dD
+B->#D|$E
+D->dD|dB|⊥
+C->cE
+E->eE|eB|⊥
