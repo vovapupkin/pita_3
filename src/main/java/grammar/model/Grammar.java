@@ -5,27 +5,28 @@ import grammar.util.RuleParser;
 import grammar.util.StringUtil;
 
 import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class Grammar {
     private String S;
-    private List<Rule> rules;
+    private Set<Rule> rules;
     private Set<Character> T;
     private Set<Character> N;
 
-    public Grammar(List<Rule> rules, Set<Character> T, Set<Character> N) {
+    public Grammar(Set<Rule> rules, Set<Character> T, Set<Character> N) {
         this.rules = rules;
         this.T = T;
         this.N = N;
         this.S = "S";
     }
 
-    public List<Rule> getRules() {
+    public Set<Rule> getRules() {
         return rules;
     }
 
-    public void setRules(List<Rule> rules) {
+    public void setRules(Set<Rule> rules) {
         this.rules = rules;
     }
 
@@ -118,7 +119,7 @@ public class Grammar {
         Set<Character> terminals = Rule.getTerminals(rules);
         Set<Character> nonTerminals = Rule.getNonterminals(rules);
 
-        return new Grammar(rules, terminals, nonTerminals);
+        return new Grammar(new HashSet<>(rules), terminals, nonTerminals);
     }
 
 

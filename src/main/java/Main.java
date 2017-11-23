@@ -9,26 +9,28 @@ import storememorymachine.SimpleStoreMemoryMachine;
 public class Main {
 
     public static void main(String[] args) {
+        Grammar grammar;
+        String filePath;
 //        String filePath = "rules";
         //1
         //2
         //3
         //4
-        String filePath = "rules_lab3";
+//        String filePath = "rules_lab3";
 
-        Grammar grammar = Grammar.fromFile(filePath);
-
-        FiniteStateMachine finiteStateMachine = FSMBuilder.buildFromGrammar(grammar);
-
-        GraphDrawerUtil.drawGraph(finiteStateMachine);
-
-        FiniteStateMachine minimized = FSMMinimizeUtil.minimize(finiteStateMachine);
-
-        GraphDrawerUtil.drawGraph(minimized);
+//        grammar = Grammar.fromFile(filePath);
+//
+//        FiniteStateMachine finiteStateMachine = FSMBuilder.buildFromGrammar(grammar);
+//
+//        GraphDrawerUtil.drawGraph(finiteStateMachine);
+//
+//        FiniteStateMachine minimized = FSMMinimizeUtil.minimize(finiteStateMachine);
+//
+//        GraphDrawerUtil.drawGraph(minimized);
         //5
         filePath = "rules_5";
         grammar = Grammar.fromFile(filePath);
-        ExtendedStoreMemoryMachine simpleStoreMemoryMachine = new ExtendedStoreMemoryMachine(grammar);
-        simpleStoreMemoryMachine.startRecognition("add⊥");
+        SimpleStoreMemoryMachine simpleStoreMemoryMachine = new SimpleStoreMemoryMachine(grammar);
+        simpleStoreMemoryMachine.startRecognition("{[[T]]a]a}");
     }
 }

@@ -1,5 +1,5 @@
-S->X|Y|Z
-X->|x#X|x#Y
-Y->|Yy$|Yz$|$
-Z->Zz$
-K->Kk$|k$.
+S->{R|[R
+R->|Ra}|Ra]|a|T|F
+F->{F}|bb
+T->[T]
+E->k⊥

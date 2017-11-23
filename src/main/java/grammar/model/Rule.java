@@ -85,4 +85,27 @@ public class Rule {
 
         return terminals;
     }
+
+    @Override
+    public String toString() {
+        return "{" + left + "->" + right + "}";
+    }
+
+    @Override
+    public int hashCode() {
+        int result = left.hashCode();
+        result = 31 * result + right.hashCode();
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Rule rule = (Rule) o;
+
+        if (left != null ? !left.equals(rule.left) : rule.left != null) return false;
+        return right != null ? right.equals(rule.right) : rule.right == null;
+    }
 }
